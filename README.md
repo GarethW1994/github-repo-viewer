@@ -1,6 +1,11 @@
 # Github Finder 
-
+   
+ #### About
+  Github Finder is a small weight application built to expand my learning around React and Redux. As my learning expands more and more around React + Redux, this app will be improved more and more.
+ <hr/>
+ 
  #### Local Installation
+ 
  <hr/>
 
 - In your Terminal run `git clone git@github.com:GarethW1994/github-repo-viewer.git` cmd.
