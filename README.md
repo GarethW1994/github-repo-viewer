@@ -13,3 +13,5 @@
 - Then install node modules with `npm install` cmd.
 - After the `node_modules` folder have been added to the project then run `npm start` cmd which will spin up the development server.
   **Note**: If the development server don't start autonomously  `localhost:3000`
+
+#### How to use application:
