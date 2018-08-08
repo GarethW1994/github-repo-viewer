@@ -20,6 +20,10 @@
 
 ![home-screen](https://user-images.githubusercontent.com/22448019/43824179-9515639e-9af1-11e8-829b-fe202b4d60fa.png)
 
-- The important part to note here is the demo button which will take you the application. Let's click it !
+- The important part to note here is the demo button which will take you to the application. Let's click it !
 
 ![demo-button](https://user-images.githubusercontent.com/22448019/43824225-b286c3f0-9af1-11e8-941b-9247251b5d12.png)
+
+- The next screen you would see is the githubfinder search screen.
+
+![search-screen](https://user-images.githubusercontent.com/22448019/43824667-f05ac1d0-9af2-11e8-84d2-8bef4bc2f497.png)
