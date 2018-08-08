@@ -15,3 +15,9 @@
   **Note**: If the development server don't start autonomously  `localhost:3000`
 
 #### How to use application:
+
+- The first screen you would see when opening the application is home screen, which gives you more information about the project. 
+  ![home-screen](https://user-images.githubusercontent.com/22448019/43824179-9515639e-9af1-11e8-829b-fe202b4d60fa.png)
+
+- The important part to note here is the demo button which will take you the application. Let's click it !
+![demo-button](https://user-images.githubusercontent.com/22448019/43824225-b286c3f0-9af1-11e8-941b-9247251b5d12.png)
