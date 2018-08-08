@@ -16,12 +16,7 @@
 
 #### How to use application:
 
-- The first screen you would see when opening the application is home screen, which gives you more information about the project. Let's go ahead and click the demo button to go to the search view.
-
-![home-screen](https://user-images.githubusercontent.com/22448019/43824179-9515639e-9af1-11e8-829b-fe202b4d60fa.png)
-
-- The next screen you would see is the githubfinder search screen. The idea, as you might have well guessed, is to enter a github user name in the textbox and click the search button. Let's do just that.
-
-![search-screen](https://user-images.githubusercontent.com/22448019/43824667-f05ac1d0-9af2-11e8-84d2-8bef4bc2f497.png)
-
-![enter-username](https://user-images.githubusercontent.com/22448019/43824864-75cb3f5c-9af3-11e8-94db-7a13fcdef9ae.png)
+1. When you open the application the first thing you'd see is a home screen, giving more information about the project. To go to the app click the ``demo`` button.
+2. On the search view. Enter a github username in the search box and click the search button.
+![enter-username](https://user-images.githubusercontent.com/22448019/43825358-da7f2c14-9af4-11e8-96de-91092c42e9a0.png)
+3. On the profile viewer you should see more information about the github user.
