@@ -17,7 +17,7 @@
 #### How to use application:
 
 1. When you open the application the first thing you'd see is a home screen, giving more information about the project. To go to the app click the ``demo`` button.
-2. On the search view. Enter a github username in the search box and click the search button.
+2. On the search view. Enter a github username in the search box and click the ``search`` button.
 ![enter-username](https://user-images.githubusercontent.com/22448019/43825358-da7f2c14-9af4-11e8-96de-91092c42e9a0.png)
 3. On the profile viewer you should see more information about the searched github user.
 4. To navigate back to the search view, or to view the user's github or repositories use the navigation bar on the bottom of the screen. <br/>
