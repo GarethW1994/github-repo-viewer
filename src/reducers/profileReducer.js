@@ -1,10 +1,10 @@
-import { FIND_USER } from '../actions/types';
-import { NAV_POSITION } from '../actions/types';
+import { FIND_USER, NAV_POSITION, REPO_FILES } from '../actions/types';
 
 const initialState = {
     profile: {},
     username: '',
-    navigation: 'home'
+    navigation: 'home',
+    files: []
 }
 
 export default function(state = initialState, action) {
@@ -22,6 +22,12 @@ export default function(state = initialState, action) {
                     ...state,
                     navigation: action.payload
                 };
+            case REPO_FILES:
+                console.log('repo files reducer', action);
+                    return {
+                        ...state,
+                        files: action.payload
+                    };
             default:
                 return state;
         }

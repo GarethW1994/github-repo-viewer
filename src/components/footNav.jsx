@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
-import { 
-    BrowserRouter as Router,    
-    // Link,
-    // NavLink
-} from 'react-router-dom';
-// import { Route, Redirect } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import navAction from '../actions/navAction';
+import findFiles from '../actions/repoFileAction';
 
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -17,6 +14,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faCode, faUser, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+
+import WebViewer from './WebViewer';
 
 const styles = {
     TabBarContainer: {
@@ -38,6 +37,8 @@ const styles = {
 };
 
 const footerRender = (props, self) => {
+    console.log(props);
+
     switch (props) {
         case "search":
             return (
@@ -80,6 +81,28 @@ const footerRender = (props, self) => {
                 </Paper>
                 </div>
             );
+        case'sourceCode': 
+            return(
+                    <div>
+                            <WebViewer repo={"github-repo-viewer"}/>
+                            <div>
+                            <Paper  style={styles.TabBarContainer} square={true}>
+                            <Tabs
+                             value={self.state.value}
+                             onChange={self.handleChange}
+                             fullWidth
+                             indicatorColor="secondary"
+                             textColor="secondary"
+                             >
+                    
+                             <Tab icon={<FontAwesomeIcon icon={faSearch} size="2x"/>} name="search" label="Github Finder" />
+                             <Tab icon={<FontAwesomeIcon icon={faCode} size="2x"/>} label="Source Code" name="sourceCode" />
+                
+                            </Tabs>
+                            </Paper>
+                            </div>   
+                    </div>
+                )
         case "home":
             let emoji = String.fromCodePoint(0x1F603);
             return (
@@ -106,7 +129,7 @@ class FootNav extends Component {
     super(props);
     this.state = {
       navigation: '',
-      value: 0 
+      value: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.onNavigate = this.onNavigate.bind(this);
@@ -141,17 +164,22 @@ class FootNav extends Component {
         if (this.state.navigation === 'search') {
             switch (value) {
                 case 0:
-                        console.log('search tab');
+                        this.props.navAction('search');
                         this.setState({
-                            value: 0
+                            value: 0,
                         })
                     break;
-                case 1: 
-                        window.open("https://github.com/GarethW1994/github-repo-viewer");
+                case 1:         
+                        // this.props.navAction('sourceCode');
+                        this.props.findFiles({
+                            location: 'sourceCode',
+                            repo: "github-repo-viewer",
+                            user: 'GarethW1994'
+                        });
+
                         this.setState({
-                            value: 1
+                            value: 1,
                         })
-                        console.log('source code tab', this.state);
                     break;
                 default:
                     break;
@@ -159,19 +187,16 @@ class FootNav extends Component {
         } else if (this.state.navigation === 'profileviewer') {
             switch (value) {
                 case 0:
-                    console.log('your profile');
                     this.setState({
                         value
                     });
                     break;
                 case 1:
-                    console.log('github profile');
                     this.setState({
                         value
                     });
                     break;
                 case 2:
-                    console.log('your repositories');
                     this.setState({
                         value
                     });
@@ -220,4 +245,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { navAction } )(FootNav);
+export default connect(mapStateToProps, { navAction, findFiles } )(FootNav);

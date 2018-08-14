@@ -1,4 +1,4 @@
-import { FIND_USER  } from './types';
+import { FIND_USER } from './types';
 import navAction from './navAction';
 
 const finderUser = (username) => dispatch => {
