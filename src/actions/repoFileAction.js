@@ -3,8 +3,7 @@ import navAction from './navAction';
 
 const findFiles = (info) => dispatch => {
     console.log('action for ' + info);
-
-
+    
     fetch(`https://api.github.com/repos/${info.user}/${info.repo}/contents`)
     .then(resp => resp.json())
     .then(repoInfo => {

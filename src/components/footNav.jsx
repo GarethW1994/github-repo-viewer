@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faCode, faUser, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
-import WebViewer from './WebViewer';
+import WebViewer from './FileSystem/WebViewer';
 
 const styles = {
     TabBarContainer: {
@@ -170,7 +170,6 @@ class FootNav extends Component {
                         })
                     break;
                 case 1:         
-                        // this.props.navAction('sourceCode');
                         this.props.findFiles({
                             location: 'sourceCode',
                             repo: "github-repo-viewer",
