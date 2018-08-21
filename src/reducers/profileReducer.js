@@ -1,10 +1,11 @@
-import { FIND_USER, NAV_POSITION, REPO_FILES } from '../actions/types';
+import { FIND_USER, NAV_POSITION, REPO_FILES, ALL_REPOS } from '../actions/types';
 
 const initialState = {
     profile: {},
     username: '',
     navigation: 'home',
-    files: []
+    files: [],
+    allRepos: []
 }
 
 export default function(state = initialState, action) {
@@ -28,6 +29,12 @@ export default function(state = initialState, action) {
                         ...state,
                         files: action.payload
                     };
+            case ALL_REPOS: 
+                    console.log('all repos reducer', action);
+                    return {
+                         ...state,
+                         allRepos: action.payload
+                    }
             default:
                 return state;
         }

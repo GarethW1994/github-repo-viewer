@@ -1,3 +1,6 @@
-export const FIND_USER = 'FIND_USER';
-export const NAV_POSITION = 'NAV_POSITION';
-export const REPO_FILES = 'REPO_FILES';
+const FIND_USER = 'FIND_USER';
+const NAV_POSITION = 'NAV_POSITION';
+const ALL_REPOS = 'ALL_REPOS';
+const REPO_FILES = 'REPO_FILES';
+
+export { FIND_USER, NAV_POSITION, ALL_REPOS, REPO_FILES }

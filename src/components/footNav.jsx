@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import navAction from '../actions/navAction';
 import findFiles from '../actions/repoFileAction';
+import allRepos from '../actions/reposAction';
 
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -16,6 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faCode, faUser, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 import WebViewer from './FileSystem/WebViewer';
+import Branches from './Branches/Branch';
 
 const styles = {
     TabBarContainer: {
@@ -116,6 +118,30 @@ const footerRender = (props, self) => {
                 </AppBar>
               </div>
             )
+        case "repositories":
+                return (
+                    <div>  
+                    <Branches />
+
+                    <Paper style={styles.TabBarContainer} square={true}>
+                    <Tabs
+                     value={self.state.value}
+                     onChange={self.handleChange}
+                     name={props}
+                     fullWidth
+                     indicatorColor="secondary"
+                     textColor="secondary"
+                     >
+            
+                     <Tab name="profile" icon={<FontAwesomeIcon icon={faUser} size="2x"/>} label="Profile" />
+                     <Tab name="ghProfile" icon={<FontAwesomeIcon icon={['fab', 'fa-github']} size="2x"/>} label="Github Profile" />
+                     <Tab name="repo" icon={<FontAwesomeIcon icon={faCodeBranch} size="2x"/>} label="Repositories" />
+                     <Tab name="githubsearch" icon={<FontAwesomeIcon icon={faSearch} size="2x"/>} label="Search" />
+                    
+                    </Tabs>
+                    </Paper>
+                    </div>
+                )
         default:
         return (
             <div>{props}</div>
@@ -186,6 +212,7 @@ class FootNav extends Component {
         } else if (this.state.navigation === 'profileviewer') {
             switch (value) {
                 case 0:
+                     this.props.navAction('profileviewer');
                     this.setState({
                         value
                     });
@@ -194,8 +221,14 @@ class FootNav extends Component {
                     this.setState({
                         value
                     });
+                    window.open(this.props.profile.profile.html_url);
+
                     break;
                 case 2:
+                 this.props.allRepos({
+                    location: 'repositories',
+                    user: this.props.profile.username
+                });
                     this.setState({
                         value
                     });
@@ -244,4 +277,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { navAction, findFiles } )(FootNav);
+export default connect(mapStateToProps, { navAction, findFiles , allRepos} )(FootNav);
